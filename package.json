@@ -28,5 +28,10 @@
     "prepare": "husky",
     "lint": "bun eslint .",
     "lint:fix": "bun eslint . --fix"
+  },  
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
