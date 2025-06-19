@@ -2,7 +2,7 @@
   "name": "@experimental-ai-project/api",
   "version": "1.0.0",
   "description": "API package for the experimental AI project",
-  "main": "src/index.ts",
+  "main": "src/api.ts",
   "scripts": {
     "dev": "bun --watch run src/api.ts",
     "start": "bun run src/api.ts"
