@@ -1,0 +1,18 @@
+{
+  "name": "@experimental-ai-project/api",
+  "version": "1.0.0",
+  "description": "API package for the experimental AI project",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "bun --watch run src/api.ts",
+    "start": "bun run src/api.ts"
+  },
+  "dependencies": {
+    "@experimental-ai-project/shared": "workspace:*",
+    "jsonrepair": "^3.12.0"
+  },
+  "devDependencies": {
+    "zod": "^3.25.64"
+  },
+  "private": true
+}

@@ -1,0 +1,32 @@
+{
+  "name": "experimental-ai-project",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.3",
+    "@types/express": "^5.0.3",
+    "express": "^5.1.0",
+    "eslint-import-resolver-typescript": "^4.4.3",
+    "eslint-plugin-import": "^2.31.0"
+  },
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "eslint": "^9.29.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "lint": "bun eslint .",
+    "lint:fix": "bun eslint . --fix"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mcp-server-service",
+  "version": "1.0.0",
+  "description": "MCP Server package for the experimental AI project",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "bun --watch run src/server.ts",
+    "start": "bun run src/server.ts"
+  },
+  "devDependencies": {
+    "zod": "^3.25.64"
+  },
+  "private": true
+}
