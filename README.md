@@ -25,29 +25,33 @@ experimental-ai-project/
 ## Initial Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd experimental-ai-project
    ```
 
 2. **Install dependencies**:
+
    ```bash
    bun install
    ```
 
 3. **Set up environment variables**:
    Create a `.env` file in the root directory:
+
    ```env
    MODEL_NAME=gemma3:latest
-   API_PORT=3001
-   MCP_SERVER_PORT=3000
+   API_PORT=3000
+   MCP_SERVER_PORT=3001
    ```
 
 4. **Set up Docker and pull the Gemma model**:
+
    ```bash
    # Make the setup script executable
    chmod +x scripts/setup-gemma3.sh
-   
+
    # Run the setup script
    ./scripts/setup-gemma3.sh
    ```
@@ -57,25 +61,27 @@ experimental-ai-project/
 You'll need to run both the MCP server and the API service in separate terminal windows.
 
 1. **Terminal 1 - Start the MCP Server**:
+
    ```bash
    cd packages/mcp-server-service
    bun run dev
    ```
-   The MCP server will start on port 3000 (or your configured MCP_SERVER_PORT).
+
+   The MCP server will start on port 3001 (or your configured MCP_SERVER_PORT).
 
 2. **Terminal 2 - Start the API Service**:
    ```bash
    cd packages/api
    bun run dev
    ```
-   The API service will start on port 3001 (or your configured API_PORT).
+   The API service will start on port 3000 (or your configured API_PORT).
 
 ## Testing the Setup
 
 You can test the setup by sending a request to generate an answer:
 
 ```bash
-curl -X POST http://localhost:3001/api/generate \
+curl -X POST http://localhost:3000/api/generate \
   -H "Content-Type: application/json" \
   -d '{
     "prompt": "What is the sum of 5 and 7?"
@@ -83,6 +89,7 @@ curl -X POST http://localhost:3001/api/generate \
 ```
 
 Expected response:
+
 ```json
 {
   "tools": [
@@ -97,11 +104,13 @@ Expected response:
 ## Available Services
 
 ### API Service (packages/api)
+
 - Main interface for generating AI-powered answers
 - Integrates with MCP server for tool execution
 - Endpoint: POST `/api/generate`
 
 ### MCP Server Service (packages/mcp-server-service)
+
 - Implements Model Context Protocol
 - Provides tools for basic operations (addition, weather info)
 - Endpoint: POST `/mcp`
@@ -109,17 +118,20 @@ Expected response:
 ## Development Scripts
 
 Each package has the following scripts:
+
 - `bun run dev` - Start development server with hot reload
 - `bun run start` - Start production server
 
 ## Troubleshooting
 
 1. **Docker Issues**:
+
    - Ensure Docker is running: `docker ps`
    - Check model status: `docker model status gemma3:latest`
    - Restart Docker if needed
 
 2. **Port Conflicts**:
+
    - Check if ports 3000 and 3001 are available
    - Modify ports in .env file if needed
 
