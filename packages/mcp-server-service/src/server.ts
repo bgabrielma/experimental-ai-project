@@ -103,7 +103,7 @@ app.post('/mcp', async (req: Request, res: Response) => {
   }
 });
 
-const port = process.env.MCP_SERVER_PORT ?? 3000;
+const port = process.env.MCP_SERVER_PORT ?? 3001;
 app.listen(port, () => {
   console.info(
     `MCP Stateless Streamable HTTP Server listening on port ${port}`,

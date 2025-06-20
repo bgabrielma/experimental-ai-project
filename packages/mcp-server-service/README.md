@@ -14,6 +14,7 @@ Model Context Protocol (MCP) server for the experimental AI project. This servic
 ## Available Tools
 
 ### 1. Addition Tool
+
 - **Name:** `add`
 - **Description:** Performs addition of two numbers
 - **Parameters:**
@@ -26,6 +27,7 @@ Model Context Protocol (MCP) server for the experimental AI project. This servic
 - **Returns:** Text content with the sum result
 
 ### 2. Weather Tool
+
 - **Name:** `weather`
 - **Description:** Get the current weather for a given city
 - **Parameters:**
@@ -39,11 +41,13 @@ Model Context Protocol (MCP) server for the experimental AI project. This servic
 ## Available Resources
 
 ### 1. Addition Info
+
 - **URI:** `resource://add-info`
 - **Purpose:** Provides guidance on using the addition tool
 - **Content:** Documentation and examples for the add tool
 
 ### 2. Weather Info
+
 - **URI:** `resource://weather-info`
 - **Purpose:** Provides guidance on using the weather tool
 - **Content:** Documentation and examples for the weather tool
@@ -51,13 +55,14 @@ Model Context Protocol (MCP) server for the experimental AI project. This servic
 ## Installation
 
 Run the following command to install dependencies:
+
 ```bash
 bun install
 ```
 
 ## Environment Variables
 
-- `MCP_SERVER_PORT` - Port number for the MCP server (default: 3000)
+- `MCP_SERVER_PORT` - Port number for the MCP server (default: 3001)
 
 ## Scripts
 
@@ -67,6 +72,7 @@ bun install
 ## API Endpoint
 
 ### MCP Request Handler
+
 - **URL:** `/mcp`
 - **Method:** `POST`
 - **Content-Type:** `application/json`
@@ -88,6 +94,7 @@ bun install
 ## Usage
 
 1. Start the server:
+
 ```bash
 bun run dev
 ```
@@ -99,6 +106,7 @@ bun run dev
 ## Implementation Details
 
 The server is built using:
+
 - Express.js for HTTP handling
 - `@modelcontextprotocol/sdk` for MCP implementation
 - Zod for runtime type validation

@@ -18,6 +18,9 @@ bun install
 ## Environment Variables
 
 - `API_PORT` - Port number for the API server (default: 3000)
+- `GEMMA_LLM_ENGINE_CHAT_URL` - URL for the Gemma LLM engine chat
+- `GEMMA_LLM_ENGINE_MODEL_NAME` - Name of the Gemma LLM model to use
+- `MCP_SERVER_URL` - URL for the MCP server
 
 ## Scripts
 
@@ -27,23 +30,24 @@ bun install
 ## API Endpoints
 
 ### Generate Answer
+
 - **URL:** `/api/generate`
 - **Method:** `POST`
 - **Request Body:**
   ```typescript
   {
-    prompt: string;  // The prompt to generate an answer for
+    prompt: string; // The prompt to generate an answer for
   }
   ```
 - **Success Response:**
   - **Code:** 200
-  - **Content:** 
+  - **Content:**
     ```typescript
     {
       tools: Array<{
-        name: string;     // Name of the tool that was executed
-        result: Primitive // The result from the tool execution (string, number, boolean, etc.)
-      }> | null          // null if no tools were executed or if there was an error
+        name: string; // Name of the tool that was executed
+        result: Primitive; // The result from the tool execution (string, number, boolean, etc.)
+      }> | null; // null if no tools were executed or if there was an error
     }
     ```
 - **Error Response:**
@@ -57,6 +61,7 @@ bun install
 ## Architecture
 
 The API is built using a clean architecture approach with:
+
 - Domain-driven design principles
 - Use case based business logic
 - Service layer abstraction for external dependencies (Gemma LLM and MCP Client)
